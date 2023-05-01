@@ -1,11 +1,15 @@
+
+const buttons = document.querySelectorAll('button');
+const display = document.querySelector('.display')
+
 const add = (a, b) => a + b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
-const divide = (a, b) => a / b;
+const divide = (a, b) => (a / b).toFixed(2);
 
-let operator = '/';
-let number1 = 1;
-let number2 = 2;
+let operator = '*';
+let total = null;
+let number2 = null;
 
 const operate = (operator, number1, number2) => {
     if (operator === '+') return add(number1, number2);
@@ -14,5 +18,38 @@ const operate = (operator, number1, number2) => {
     else if (operator === '/') return divide(number1, number2);
 }
 
-const result = operate(operator, number1, number2);
-console.log(result);
+const buttonPress = () => {
+    buttons.forEach(button => {
+        button.addEventListener('click', event => {
+            if (button.id === 'clear') {
+                total = null;
+                number2 = null;
+                display.textContent = '0';
+            }
+            else if (button.id === 'equals') {
+                display.textContent = operate(operator, total, number2);
+            }
+            else if (isNaN(button.id)) {
+                if (total === null) {
+                    total = Number(display.textContent);
+                }
+                else {
+                    number2 = Number(display.textContent);
+                    operator = button.textContent;
+                    total = operate(operator, total, number2);
+                }
+                display.textContent = '0';
+                console.log(total, number2);
+            }
+            else if (display.textContent === '0') {
+                display.textContent = button.textContent;
+            }
+            else {
+                display.textContent += button.textContent;
+            }
+        })
+    })
+}
+
+
+buttonPress();

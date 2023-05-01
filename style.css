@@ -4,7 +4,7 @@ body {
 
 #container {
   width: 500px;
-  height: 800px;
+  height: 730px;
   border: solid;
   margin: auto;
   margin-top: 50px;
@@ -19,30 +19,34 @@ body {
   background-color: green;
   margin: 40px;
   padding-top: 50px;
+  padding-left: 10px;
   font-size: 72px;
   box-shadow: inset 0px 0px 30px;
   opacity: 0.8;
 }
 
 .buttons {
-  margin: 40px;
+  margin: 30px 40px;
   display: flex;
   flex-direction: column;
 }
 
-.clear {
+#clear {
   border: solid;
+  height: 75px;
+  width: 200px;
   border-width: 3px;
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin-right: auto;
   margin-top: -50px;
   border-radius: 10px;
-  font-size: 72px;
+  font-size: 50px;
   box-shadow: inset 0px 0px 3px;
+  text-align: center;
 }
 
 .numbers {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -59,7 +63,22 @@ body {
   box-shadow: inset 0px 0px 3px;
 }
 
+.numbers > button:active,
+#clear:active {
+  background-color: rgba(160, 253, 255, 0.309);
+  box-shadow: 0px 0px 0px;
+}
+
+.numbers > button:active {
+  font-size: 69px;
+}
+
+#clear:active {
+  font-size: 49px;
+}
+
 .numbers > #equals {
   width: 200px;
+  height: 100px;
   align-self: flex-end;
 }
