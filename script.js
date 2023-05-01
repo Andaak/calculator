@@ -27,19 +27,20 @@ const buttonPress = () => {
                 display.textContent = '0';
             }
             else if (button.id === 'equals') {
+                number2 = Number(display.textContent);
                 display.textContent = operate(operator, total, number2);
             }
             else if (isNaN(button.id)) {
                 if (total === null) {
                     total = Number(display.textContent);
+                    operator = button.textContent;
                 }
                 else {
                     number2 = Number(display.textContent);
-                    operator = button.textContent;
                     total = operate(operator, total, number2);
+                    operator = button.textContent;
                 }
                 display.textContent = '0';
-                console.log(total, number2);
             }
             else if (display.textContent === '0') {
                 display.textContent = button.textContent;
