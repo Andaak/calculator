@@ -1,0 +1,65 @@
+body {
+  display: flex;
+}
+
+#container {
+  width: 500px;
+  height: 800px;
+  border: solid;
+  margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 35px;
+  background-color: rgb(198, 198, 198);
+  box-shadow: inset 0px 0px 20px;
+}
+
+.display {
+  background-color: green;
+  margin: 40px;
+  padding-top: 50px;
+  font-size: 72px;
+  box-shadow: inset 0px 0px 30px;
+  opacity: 0.8;
+}
+
+.buttons {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.clear {
+  border: solid;
+  border-width: 3px;
+  padding: 10px 20px;
+  margin-right: auto;
+  margin-top: -50px;
+  border-radius: 10px;
+  font-size: 72px;
+  box-shadow: inset 0px 0px 3px;
+}
+
+.numbers {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.numbers > button {
+  border: solid;
+  border-width: 3px;
+  font-size: 72px;
+  width: 90px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 3px;
+}
+
+.numbers > #equals {
+  width: 200px;
+  align-self: flex-end;
+}
