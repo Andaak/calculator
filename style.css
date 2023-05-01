@@ -65,8 +65,12 @@ body {
 
 .numbers > button:active,
 #clear:active {
-  background-color: rgba(160, 253, 255, 0.309);
   box-shadow: 0px 0px 0px;
+}
+
+.numbers > button:hover,
+#clear:hover {
+  background-color: rgba(156, 187, 238, 0.23);
 }
 
 .numbers > button:active {
